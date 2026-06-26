@@ -78,6 +78,7 @@
             max-width: 35rem;
         }
 
+
         /* Responsive */
         @media (max-width: 768px) {
             .about-hero {
@@ -96,6 +97,10 @@
 
             .about-biography {
                 max-width: 100%;
+            }
+
+            .hamburger {
+                color: var(--color-text-light) !important;
             }
         }
     </style>
@@ -116,7 +121,18 @@
             <a href="sobre-mi.html">Sobre mí</a>
             <a href="contacto.html">Contacto</a>
         </nav>
+        <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
+
+    <nav class="nav-mobile-overlay" aria-label="Menú móvil">
+        <a href="proyectos.html">Proyectos</a>
+        <a href="sobre-mi.html">Sobre mí</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
 
     <section class="page">
         <div class="container">
