@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Proyectos — Marisabfilm</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="proyectos.css">
+</head>
+
+<body class="light-mode">
+
+    <header class="header">
+        <h1>
+            <a href="index.html" class="logo">
+                <img src="svg/blanco.svg" alt="Marisabfilm" class="logo-white">
+                <img src="svg/negro.svg" alt="Marisabfilm" class="logo-black">
+            </a>
+        </h1>
+
+        <nav class="right">
+            <a href="proyectos.html" style="color: var(--color-text-light);">Proyectos</a>
+            <a href="sobre-mi.html">Sobre mí</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <main class="projects-page">
+        <div class="container">
+
+            <nav class="projects-filter" aria-label="Filtrar proyectos">
+                <button class="filter-btn active" data-filter="all">Todo</button>
+                <button class="filter-btn" data-filter="foto">Fotografía</button>
+                <button class="filter-btn" data-filter="video">Vídeo</button>
+            </nav>
+
+            <div class="editorial-grid" id="projectsGrid">
+
+                <a class="editorial-item" href="eclipso-sevilla.html" data-category="video">
+                    <div class="item-image">
+                        <video id="eclipsoVideo" src="video/eclipso-video.mp4#t=9,36" autoplay muted loop
+                            playsinline></video>
+                        <span class="item-tag">Vídeo</span>
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-title">Eclipso Sevilla</h3>
+                        <span class="item-meta">Vídeo · Edición</span>
+                        <span class="item-date">2026</span>
+                    </div>
+                </a>
+
+                <a class="editorial-item" href="comunion-carmen.html" data-category="foto">
+                    <div class="item-image">
+                        <img src="jpg/comunion-carmen/18042026-_1117905.jpg" alt="Comunión Carmen">
+                        <span class="item-tag">Fotografía</span>
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-title">Comunión Carmen</h3>
+                        <span class="item-meta">Fotografía · Edición</span>
+                        <span class="item-date">2026</span>
+                    </div>
+                </a>
+
+                <a class="editorial-item" href="boda-carolina-antonclaudio.html" data-category="video">
+                    <div class="item-image">
+                        <video src="video/boda.MOV" autoplay muted loop playsinline></video>
+                        <span class="item-tag">Vídeo</span>
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-title">Boda Carolina & Antonclaudio</h3>
+                        <span class="item-meta">Vídeo tráiler · Grabación + Edición</span>
+                        <span class="item-date">2025</span>
+                    </div>
+                </a>
+
+                <a class="editorial-item" href="kocina-sevilla.html" data-category="foto">
+                    <div class="item-image">
+                        <img src="jpg/kocina/imagen-1.jpg" alt="Kocina Sevilla">
+                        <span class="item-tag">Fotografía</span>
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-title">Kocina Sevilla</h3>
+                        <span class="item-meta">Fotografía · Edición</span>
+                        <span class="item-date">2025</span>
+                    </div>
+                </a>
+
+                <a class="editorial-item" href="tfg-zara.html" data-category="video">
+                    <div class="item-image">
+                        <video id="zaraVideo" src="video/tfg-portfolio.mp4#t=3,46" autoplay muted loop
+                            playsinline></video>
+                        <span class="item-tag">Vídeo</span>
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-title">Anuncio Zara Rose Gourmand</h3>
+                        <span class="item-meta">Spot Publicitario · Grabación + Edición</span>
+                        <span class="item-date">2025</span>
+                    </div>
+                </a>
+
+
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        © 2026 Marisabfilm
+    </footer>
+
+
+    <script>
+        // FILTRO DE CATEGORÍAS ADAPTADO A TU ESTRUCTURA GRID
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const items = document.querySelectorAll('.editorial-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // 1. Cambiar el botón activo de forma visual
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+
+                items.forEach(item => {
+                    // Comprobamos si el data-category coincide con el data-filter
+                    // NOTA: Tu botón usa data-filter="foto" pero tus tarjetas usan data-category="foto"
+                    const match = filter === 'all' || item.dataset.category === filter;
+
+                    if (match) {
+                        // Respetamos el 'display: grid' nativo de tu proyectos.css usando !important
+                        item.style.setProperty('display', 'grid', 'important');
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                        item.style.pointerEvents = 'auto';
+                    } else {
+                        // Ocultamos el proyecto por completo
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.98)';
+                        item.style.pointerEvents = 'none';
+                        item.style.setProperty('display', 'none', 'important');
+                    }
+                });
+            });
+        });
+
+        // CONTROL EXACTO DEL BUCLE DEL VÍDEO ECLIPSO (Segundos 9 al 36)
+        const eclipsoVideo = document.getElementById('eclipsoVideo');
+        if (eclipsoVideo) {
+            eclipsoVideo.addEventListener('timeupdate', function () {
+                if (this.currentTime >= 36) {
+                    this.currentTime = 9;
+                    this.play();
+                }
+            });
+        }
+    </script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

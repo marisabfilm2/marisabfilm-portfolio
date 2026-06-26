@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Contacto · marisabfilm</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>
+            <a href="index.html" class="logo">
+                <img src="svg/blanco.svg" alt="Marisabfilm" class="logo-white">
+                <img src="svg/negro.svg" alt="Marisabfilm" class="logo-black">
+            </a>
+        </h1>
+
+        <nav class="right">
+            <a href="proyectos.html">Proyectos</a>
+            <a href="sobre-mi.html">Sobre mí</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="page">
+        <div class="container">
+
+            <div class="contacto-wrapper">
+
+                <div class="contacto-info">
+                    <p class="section-eyebrow">Contacto</p>
+                    <br>
+                    <h2 class="section-title" style="font-size: var(--fs-xl); margin-bottom: var(--space-2);">
+                        ¡Contáctame!</h2>
+                    <p class="lead">Cuéntame tu idea, proyecto o evento. Hablemos de cómo capturar tus recuerdos a
+                        través del objetivo.</p>
+                </div>
+
+                <form class="contacto-form" action="https://formspree.io/f/mojoddda" method="POST">
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required
+                            placeholder="Cuéntame un poco más..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-enviar">Enviar Mensaje →</button>
+                </form>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer
+        style="margin-top: -9rem; padding: var(--space-2) 0; text-align: center; border-top: 1px solid rgba(94, 80, 63, 0.1);">
+        <p style="font-size: var(--fs-xs); color: var(--color-text-soft);">© 2026 Marisabfilm</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sobre mí · marisabfilm</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            background-color: #FFFFFF !important;
+            color: var(--color-text-light) !important;
+        }
+
+        /* Forzar que el menú use el logo negro directamente */
+        .logo-white {
+            display: none !important;
+        }
+
+        .logo-black {
+            display: block !important;
+        }
+
+        /* Ajustar colores de textos secundarios */
+        nav a,
+        .section-eyebrow,
+        .about-biography,
+        .service-item p,
+        .about-cta h3,
+        footer p {
+            color: var(--color-text-light-soft) !important;
+        }
+
+        nav a:hover,
+        .service-item h4 {
+            color: var(--color-text-light) !important;
+        }
+
+        /* Ajustar el botón final para que resalte en el fondo blanco */
+        .btn-enviar {
+            color: var(--color-text-light) !important;
+            border-color: var(--color-text-light) !important;
+        }
+
+        .btn-enviar:hover {
+            background-color: var(--color-text-light) !important;
+            color: #FFFFFF !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>
+            <a href="index.html" class="logo">
+                <img src="svg/blanco.svg" alt="Marisabfilm" class="logo-white">
+                <img src="svg/negro.svg" alt="Marisabfilm" class="logo-black">
+            </a>
+        </h1>
+
+        <nav class="right">
+            <a href="proyectos.html">Proyectos</a>
+            <a href="sobre-mi.html">Sobre mí</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="page">
+        <div class="container">
+
+            <div class="about-hero"
+                style="display: grid; grid-template-columns: 1fr 1.2fr; gap: var(--space-2); align-items: center; margin-bottom: var(--space-5);">
+
+                <div class="about-image-box"
+                    style="box-shadow: var(--shadow-soft); overflow: hidden; aspect-ratio: 3 / 4; width: 100%; max-width: 320px; justify-self: center;">
+                    <img src="jpg/sobre-mi/yo.jpg" alt="Marisa"
+                        style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition);"
+                        onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+
+                <div class="about-text-content">
+                    <p class="section-eyebrow" style="margin-bottom: var(--space-1);">Sobre mí</p>
+                    <h2 class="section-title"
+                        style="font-size: var(--fs-lg); margin-bottom: var(--space-3); line-height: 1.2;">Creo imágenes
+                        que cuentan.</h2>
+
+                    <div class="about-biography"
+                        style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--fs-sm); line-height: 1.7; width: 35rem;">
+                        <p>
+                            ¡Hola! Soy Marisa. Detrás de <em>Marisabfilm</em> hay una comunicadora audiovisual apasionada por capturar la autenticidad de
+                            cada instante. No me gusta encasillarme: me muevo de forma muy natural entre la fotografía y el vídeo, pero siempre
+                            persiguiendo lo mismo: una estética cinematográfica, limpia, cuidada y, sobre todo, cargada de sensibilidad real.
+                        </p>
+                        <p>
+                            Para mí, cada proyecto es una oportunidad de conectar y contar una historia única, ya sea la energía de un evento,
+                            la esencia de una marca o la intimidad de un recuerdo personal. Me encanta trabajar con la luz natural y
+                            obsesionarme de forma sana con los pequeños detalles, esos que a veces pasan desapercibidos pero que lo significan
+                            todo.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+          
+            </div>
+
+           
+
+        </div>
+    </section>
+
+    <footer
+        style="padding: var(--space-1) 0 var(--space-2) 0; text-align: center; border-top: 1px solid rgba(0, 0, 0, 0.05);">
+        <p style="font-size: var(--fs-xs);">© 2026 Marisabfilm. Todos los derechos reservados.</p>
+    </footer>
+
+   
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

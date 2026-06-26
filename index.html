@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Marisabfilm</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>
+            <a href="index.html" class="logo">
+                <img src="svg/blanco.svg" alt="Marisabfilm" class="logo-white">
+                <img src="svg/negro.svg" alt="Marisabfilm" class="logo-black">
+            </a>
+        </h1>
+
+        <nav class="right">
+            <a href="proyectos.html">Proyectos</a>
+            <a href="sobre-mi.html">Sobre mí</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-sticky">
+
+            <div class="video-container">
+                <video autoplay muted loop playsinline class="background-video">
+                    <source src="video/hero_web_video.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+
+            <div class="container hero-content">
+
+                <div class="hero-title">
+                    <h2 class="titulo">@Marisabfilm</h2>
+                    <p class="portfolio-tag">Portfolio</p>
+                </div>
+
+                <div class="hero-subtitle">
+                    <p class="eyebrow">Fotografía · Vídeo · Edición</p>
+                    <p class="lead">
+                        Comunicadora audiovisual. Recuerdos a través de un objetivo.
+                    </p>
+                </div>
+
+                <p class="scroll">¡Desliza!</p>
+                <div id="scroll-line"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="selected-projects">
+        <div class="container">
+
+            <div class="projects-header">
+                <h3>Proyectos Seleccionados</h3>
+                <a href="proyectos.html" class="btn-all-projects">Ver todos los proyectos →</a>
+            </div>
+
+            <div class="project-row">
+                <div class="project-info">
+                    <h4>KOCINA SEVILLA</h4>
+                    <p>FOTOGRAFÍA + EDICIÓN</p>
+                    <br>
+                    <a class="btn-proyecto" href="kocina-sevilla.html">Ver proyecto</a>
+                </div>
+                <div class="project-display-clean">
+                    <div class="photo-box size-lg align-top">
+                        <img src="jpg/kocina/imagen-1.jpg" alt="">
+                    </div>
+                    <div class="photo-box size-sm align-bottom">
+                        <img src="jpg/kocina/imagen-3.jpg" alt="">
+                    </div>
+                    <div class="photo-box size-md align-center">
+                        <img src="jpg/kocina/imagen-2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-row">
+                <div class="project-info">
+                    <h4>BODA CAROLINA & ANTONCLAUDIO</h4>
+                    <p>VÍDEO TRÁILER + EDICIÓN</p>
+                    <br>
+                    <a class="btn-proyecto" href="boda-carolina-antonclaudio.html">Ver proyecto</a>
+                </div>
+                <div class="project-display-clean">
+                    <div class="photo-box align-center">
+                        
+                        <video id="videoBoda" src="video/boda.MOV" controls autoplay muted loop playsinline></video>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-row">
+                <div class="project-info">
+                    <h4>COMUNIÓN CARMEN</h4>
+                    <p>FOTOGRAFÍA + EDICIÓN</p>
+                    <br>
+                    <a class="btn-proyecto" href="comunion-carmen.html">Ver proyecto</a>
+                </div>
+                <div class="project-display-clean">
+                    <div class="photo-box size-lg align-top">
+                        <img src="jpg/comunion-carmen/18042026-_1117905.jpg" alt="">
+                    </div>
+                    <div class="photo-box size-sm align-bottom">
+                        <img src="jpg/comunion-carmen/18042026-_1117877.jpg" alt="">
+                    </div>
+                    <div class="photo-box size-md align-center">
+                        <img src="jpg/comunion-carmen/18042026-_1117971.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-row">
+                <div class="project-info">
+                    <h4>ECLIPSO SEVILLA</h4>
+                    <p>VÍDEO + EDICIÓN</p>
+                    <br>
+                    <a class="btn-proyecto" href="eclipso-sevilla.html">Ver proyecto</a>
+                </div>
+                <div class="project-display-clean">
+                    <div class="photo-box align-center">
+                        <video src="video/eclipso-video.mp4" autoplay muted loop playsinline></video>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="ver-mas-final">
+        <a href="proyectos.html" class="btn-final-link">Ver todos los proyectos →</a>
+    </div>
+
+<footer class="contacto-footer">
+    <div class="container">
+        <div class="contacto-wrapper">
+
+            <div class="contacto-info">
+                <h3>¡Contáctame!</h3>
+                <p>Cuéntame tu idea, proyecto o evento. Hablemos de cómo capturar tus recuerdos a través del objetivo.
+                </p>
+            </div>
+
+            <form class="contacto-form" action="https://formspree.io/f/mojoddda" method="POST">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required
+                        placeholder="Cuéntame un poco más..."></textarea>
+                </div>
+                <button type="submit" class="btn-enviar">Enviar Mensaje →</button>
+            </form>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Marisabfilm. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
