@@ -1,0 +1,468 @@
+.project-detail-page {
+    padding-top: 7rem;
+    padding-bottom: var(--space-4);
+    overflow-x: hidden;
+}
+
+.project-hero-strip {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    height: 260px;
+    margin-bottom: var(--space-3);
+    overflow: hidden;
+}
+
+.strip-media {
+    width: 100%;
+    height: 100%;
+}
+
+.strip-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.project-hero-strip::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 1;
+}
+
+.strip-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: var(--space-2);
+    z-index: 2;
+}
+
+.project-eyebrow {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: var(--fw-medium);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.project-main-title {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    font-weight: var(--fw-semibold);
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+    color: #FFFFFF;
+}
+
+.sub-eyebrow {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-text-light-soft);
+    opacity: 0.6;
+    font-weight: var(--fw-semibold);
+}
+
+.editorial-sub-title {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: var(--fw-medium);
+    line-height: 1.3;
+    letter-spacing: -0.2px;
+    color: var(--color-text-light);
+    margin-bottom: 8px;
+}
+
+.editorial-paragraph {
+    font-size: var(--fs-xs);
+    color: var(--color-text-light-soft);
+    line-height: 1.6;
+    font-weight: var(--fw-light);
+    margin-bottom: 12px;
+}
+
+.italic-highlight {
+    font-style: italic;
+    color: var(--color-text-light);
+    margin-top: var(--space-1);
+}
+
+.project-specs-section {
+    display: grid;
+    grid-template-columns: 1fr 2.2fr;
+    gap: var(--space-3);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding-top: var(--space-3);
+    margin-bottom: var(--space-4);
+}
+
+.specs-heading {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    color: var(--color-text-light);
+    letter-spacing: -0.2px;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3) var(--space-2);
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    padding-bottom: var(--space-1);
+}
+
+.spec-item h5 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-text-light-soft);
+    font-weight: var(--fw-light);
+}
+
+.spec-item p {
+    font-size: var(--fs-xs);
+    color: var(--color-text-light);
+    font-weight: var(--fw-medium);
+}
+
+.back-to-projects {
+    margin-top: var(--space-4);
+    text-align: center;
+}
+
+.btn-back {
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-text-light-soft);
+    font-weight: var(--fw-light);
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.btn-back:hover {
+    color: var(--color-text-light);
+    transform: translateX(-4px);
+}
+
+body.is-project-detail .header::before {
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+    height: 7rem;
+}
+
+/* ==========================================================================
+   Frase de introducción (Debajo del Banner)
+   ========================================================================== */
+.hero-quote-container {
+    text-align: center;
+    padding: var(--space-3) 0 var(--space-2) 0;
+    max-width: 32rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.hero-quote-text {
+    font-family: var(--font-main);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: var(--fw-light);
+    font-style: italic;
+    color: var(--color-text-light);
+    line-height: 1.4;
+    letter-spacing: -0.1px;
+}
+
+.hero-quote-author {
+    font-family: var(--font-main);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-text-light-soft);
+    opacity: 0.7;
+    font-weight: var(--fw-medium);
+}
+
+/* ==========================================================================
+   Estructura Editorial Entrelazada (Foto Retrato Suave + Foto Horizontal)
+   ========================================================================== */
+.museum-editorial-story {
+    max-width: 1040px;
+    width: 100%;
+    margin: var(--space-4) auto var(--space-5) auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    /* Separación entre filas */
+    padding: 0 1rem;
+}
+
+.story-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+    align-items: center;
+    /* Alineación vertical centralizada */
+}
+
+.story-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.story-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Marcos de exhibición */
+.museum-frame {
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.02);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.01);
+    width: 100%;
+}
+
+.museum-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Dimensiones del contenedor ajustadas */
+.frame-horizontal {
+    aspect-ratio: 16 / 10;
+    max-width: 480px;
+}
+
+/* CORRECCIÓN DE LA VERTICAL: Ahora es formato Retrato corto (4:5) menos alargada */
+.frame-portrait {
+    aspect-ratio: 16 / 10;
+    max-width: 480px;
+    /* Al ser menos vertical, puede ensanchar un poco más para mantener proporción */
+}
+
+/* Contenedor del Vídeo Central */
+.main-video-showcase {
+    width: 100%;
+    max-width: 1040px;
+    margin: 0 auto var(--space-5) auto;
+    padding: 0 1rem;
+}
+
+.video-museum-title {
+    margin-bottom: var(--space-2);
+}
+
+.museum-single-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.frame-video-main {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #000000;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+}
+
+.final-project-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* ==========================================================================
+   Efectos de Animación Scroll (Fade In)
+   ========================================================================== */
+
+/* Estado inicial: oculto y desplazado 30px hacia abajo */
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+        transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+}
+
+/* Estado activo: totalmente visible y en su posición original */
+.fade-in-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   Galería Masonry
+   ========================================================================== */
+.project-gallery {
+    max-width: 1040px;
+    margin: 0 auto var(--space-5) auto;
+    padding: 0 1rem;
+}
+
+.gallery-title-block {
+    margin-bottom: var(--space-2);
+}
+
+.masonry-grid {
+    columns: 3;
+    column-gap: 10px;
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 10px;
+    overflow: hidden;
+    cursor: zoom-in;
+}
+
+.masonry-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+        opacity 0.4s ease;
+}
+
+.masonry-item:hover img {
+    transform: scale(1.03);
+    opacity: 0.92;
+}
+
+/* ==========================================================================
+   Lightbox
+   ========================================================================== */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.is-open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.lightbox-img-wrap {
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-img-wrap img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    display: block;
+    border-radius: 2px;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: color 0.2s ease;
+    line-height: 1;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    color: #fff;
+}
+
+.lightbox-close {
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.lightbox-prev,
+.lightbox-next {
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    padding: 0 1rem;
+}
+
+.lightbox-prev {
+    left: 1rem;
+}
+
+.lightbox-next {
+    right: 1rem;
+}
+
+.masonry-color-block {
+    aspect-ratio: 3 / 4;
+    background-color: var(--block-color);
+    cursor: default;
+}
+
+.masonry-color-block:hover img {
+    transform: none;
+}
+
+.masonry-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.masonry-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mx-width {
+    max-width: 60rem;
+    margin: 0 auto var(--space-2) auto;
+}
+
+.margin {
+    margin: 2rem auto 3rem auto;
+}
+
+.margin-ficha {
+    margin: 2rem;
+}
+
+

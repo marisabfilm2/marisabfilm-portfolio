@@ -1,0 +1,217 @@
+/* ==========================================================================
+   PROJECTS PAGE (GALERÍA HORIZONTAL - EDICIÓN ULTRA MINIMALISTA)
+   ========================================================================= */
+
+.projects-page {
+    padding-top: 8rem;
+    /* Distancia limpia con el menú superior */
+    padding-bottom: var(--space-4);
+    overflow: hidden;
+    /* Evita desbordes extraños en la estructura */
+}
+
+/* Filtros Categorías (Ahora arriba del todo) */
+.projects-filter {
+    display: flex;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: var(--space-1);
+}
+
+.filter-btn {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-text-light-soft);
+    font-weight: var(--fw-light);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-1) 0;
+    position: relative;
+    transition: color var(--transition);
+    font-family: var(--font-main);
+}
+
+.filter-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--color-text-light);
+    transition: width 0.3s ease;
+}
+
+.filter-btn:hover::after,
+.filter-btn.active::after {
+    width: 100%;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    color: var(--color-text-light);
+}
+
+/* Contenedor Galería Horizontal */
+.editorial-grid {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-3);
+    overflow-x: auto;
+    /* Activa el desplazamiento lateral */
+    overflow-y: hidden;
+    padding-bottom: var(--space-2);
+
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(94, 80, 63, 0.2) transparent;
+}
+
+/* Línea de scroll sutil (Chrome, Safari, Edge) */
+.editorial-grid::-webkit-scrollbar {
+    height: 4px;
+}
+
+.editorial-grid::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.editorial-grid::-webkit-scrollbar-thumb {
+    background: rgba(94, 80, 63, 0.2);
+    border-radius: var(--radius-full);
+}
+
+.editorial-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    text-decoration: none;
+    color: inherit;
+
+    /* MISMAS MEDIDAS COMPACTAS: 280px de ancho exacto para cada bloque */
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.item-image {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.4s ease;
+
+    /* Formato cuadrado perfecto e idéntico */
+    aspect-ratio: 1 / 1;
+}
+
+/* Capa de velo sofisticado sobre la imagen/vídeo */
+.item-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* Velo inicial suave (20% opacidad) */
+    background-color: rgba(0, 0, 0, 0.2);
+
+    z-index: 1;
+    transition: background-color 0.4s ease;
+}
+
+.item-image img,
+.item-image video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .6s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 0;
+}
+
+/* Efectos al pasar el ratón (HOVER) */
+.editorial-item:hover .item-image img,
+.editorial-item:hover .item-image video {
+    transform: scale(1.02);
+}
+
+/* El velo desaparece por completo al pasar el ratón */
+.editorial-item:hover .item-image::after {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.editorial-item:hover .item-image {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.editorial-item:hover .item-title {
+    color: var(--color-accent);
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-top: 4px;
+}
+
+.item-title {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    letter-spacing: -0.2px;
+    color: var(--color-text-light);
+    transition: color .3s ease;
+}
+
+.item-meta {
+    font-size: 11px;
+    color: var(--color-text-light-soft);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: var(--fw-light);
+}
+
+.item-date {
+    font-size: 11px;
+    color: var(--color-text-light-soft);
+    opacity: 0.6;
+    font-weight: var(--fw-light);
+}
+
+.item-tag {
+    position: absolute;
+    top: var(--space-1);
+    left: var(--space-1);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: var(--fw-medium);
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--color-text-light);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    z-index: 2;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: var(--space-4) 0 var(--space-3) 0;
+    font-size: var(--fs-xs);
+    color: var(--color-text-light-soft);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: var(--fw-light);
+}
