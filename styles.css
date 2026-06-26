@@ -1057,8 +1057,12 @@ body:not(.light-mode):not(.is-project-detail) .hamburger {
         display: flex;
     }
 
-        .header {
-            z-index: 200;
-        }
-}
+    .header {
+        z-index: 200;
+    }
 
+    .nav-mobile-overlay.is-open+* .hamburger,
+    .hamburger.is-open {
+        color: var(--color-text-light) !important;
+    }
+}
