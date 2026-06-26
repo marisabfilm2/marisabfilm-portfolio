@@ -49,11 +49,17 @@ try {
 
         const easeOutCubic = t => 1 - Math.pow(1 - t, 3)
 
-        function measure() {
+        // IMPORTANTE: usamos "const nombre = () => {}" en vez de
+        // "function nombre() {}". Safari/WebKit tiene un bug conocido con
+        // funciones declaradas (function) dentro de bloques anidados
+        // (if dentro de try) en el ámbito global: pierde la conexión con
+        // las const del bloque que las envuelve (aquí, heroSubtitle).
+        // Las funciones-expresión no sufren ese problema.
+        const measure = () => {
             naturalHeight = heroSubtitle.offsetHeight
         }
 
-        function updateTarget() {
+        const updateTarget = () => {
             targetScroll = window.scrollY
             const maxScroll = window.innerHeight * 0.7
             let p = targetScroll / maxScroll
@@ -64,7 +70,7 @@ try {
             targetProgress = p
         }
 
-        function animate() {
+        const animate = () => {
             currentProgress += (targetProgress - currentProgress) * 0.1
             currentScroll += (targetScroll - currentScroll) * 0.1
 
