@@ -376,3 +376,25 @@ try {
 } catch (e) {
     console.error("Error en fade-in de galería masonry:", e)
 }
+
+// HAMBURGUESA — menú móvil
+try {
+    var btn = document.querySelector('.hamburger');
+    var overlay = document.querySelector('.nav-mobile-overlay');
+    if (btn && overlay) {
+        btn.addEventListener('click', function () {
+            var isOpen = overlay.classList.toggle('is-open');
+            btn.classList.toggle('is-open', isOpen);
+            btn.setAttribute('aria-expanded', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+        overlay.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                overlay.classList.remove('is-open');
+                btn.classList.remove('is-open');
+                btn.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+} catch (e) { console.error('Hamburguesa:', e); }
