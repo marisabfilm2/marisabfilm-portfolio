@@ -1,14 +1,9 @@
+// ==========================================================================
+// TRANSICIÓN DE ENTRADA (Manejada por CSS de forma segura para Safari)
+// ==========================================================================
 const transition = ".6s cubic-bezier(.22,1,.36,1)"
 
-document.body.style.opacity = "0"
-
-window.addEventListener(
-    "load",
-    () => {
-        document.body.style.transition = "opacity .8s, background-color .6s ease"
-        document.body.style.opacity = "1"
-    }
-)
+// Nota: Se ha removido el bloque 'opacity = 0' y 'window.onload' para evitar pantallas en blanco.
 
 const header = document.querySelector(".header")
 
@@ -128,7 +123,7 @@ revealItems.forEach((item, i) => {
 })
 
 // =========================
-// TRANSICIONES DE PÁGINA
+// TRANSICIONES DE PÁGINA (Al salir de la página)
 // =========================
 const links = document.querySelectorAll("a")
 
@@ -140,6 +135,7 @@ links.forEach(
                 "click",
                 (e) => {
                     e.preventDefault()
+                    document.body.style.transition = "opacity .25s ease"
                     document.body.style.opacity = "0"
                     setTimeout(
                         () => { window.location = href },
@@ -287,5 +283,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
     items.forEach(item => observer.observe(item));
 });
-
-
