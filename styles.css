@@ -849,3 +849,117 @@ body.light-mode .btn-enviar:hover {
     background-color: var(--color-text-light);
     color: var(--color-bg-light);
 }
+
+/* ==========================================================================
+   RESPONSIVE — styles.css
+   ========================================================================== */
+
+/* ---- Tablet (≤ 1024px) ---- */
+@media (max-width: 1024px) {
+    .header {
+        padding: 1.5rem 2.5rem;
+    }
+
+    .hero-content {
+        padding: 0 2.5rem;
+    }
+
+    /* Index: proyectos seleccionados */
+    .project-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+        margin-bottom: var(--space-4);
+    }
+
+    .project-info {
+        position: static;
+    }
+
+    .project-display-clean {
+        gap: var(--space-2);
+    }
+
+    .size-lg {
+        width: 40%;
+    }
+
+    .size-md {
+        width: 32%;
+    }
+
+    .size-sm {
+        width: 24%;
+    }
+
+    .contacto-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+}
+
+/* ---- Mobile (≤ 640px) ---- */
+@media (max-width: 640px) {
+    :root {
+        --fs-xl: 2.8rem;
+        --fs-lg: 1.5rem;
+        --fs-hero: clamp(2.8rem, 12vw, 5rem);
+        --space-5: 80px;
+        --space-6: 100px;
+    }
+
+    .header {
+        padding: 1.2rem 1.5rem;
+        gap: var(--space-2);
+    }
+
+    h1 {
+        width: 9rem;
+    }
+
+    nav {
+        gap: var(--space-2);
+    }
+
+    nav a {
+        font-size: 0.7rem;
+    }
+
+    .hero-content {
+        padding: 0 1.5rem;
+        text-align: center;
+    }
+
+    /* Proyectos seleccionados en index: una foto apilada */
+    .project-display-clean {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-2);
+    }
+
+    .size-lg,
+    .size-md,
+    .size-sm {
+        width: 85%;
+        aspect-ratio: 4 / 3;
+    }
+
+    /* El vídeo de la boda ocupa todo el ancho */
+    .photo-box.align-center {
+        width: 100%;
+    }
+
+    /* Ver más final */
+    .ver-mas-final {
+        margin-top: -4rem;
+        padding: 1rem 0 5rem 0;
+    }
+
+    /* Contacto */
+    .contacto-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        padding: var(--space-3) 0 var(--space-2) 0;
+    }
+}

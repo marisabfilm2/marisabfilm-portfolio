@@ -166,6 +166,9 @@ body.is-project-detail .header::before {
     -webkit-mask-image: none !important;
     mask-image: none !important;
     height: 7rem;
+    background-color: var(--color-bg-light);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
 /* ==========================================================================
@@ -466,3 +469,115 @@ body.is-project-detail .header::before {
 }
 
 
+
+/* ==========================================================================
+   RESPONSIVE — proyecto-detalle.css
+   ========================================================================== */
+
+/* ---- Tablet (≤ 1024px) ---- */
+@media (max-width: 1024px) {
+    .museum-editorial-story {
+        padding: 0 0.5rem;
+    }
+
+    .story-row {
+        gap: var(--space-3);
+    }
+
+    .masonry-grid {
+        columns: 2;
+    }
+
+    .project-specs-section {
+        grid-template-columns: 1fr;
+        gap: var(--space-2);
+    }
+
+    .specs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ---- Mobile (≤ 640px) ---- */
+@media (max-width: 640px) {
+    .project-detail-page {
+        padding-top: 4.5rem;
+    }
+
+    body.is-project-detail .header::before {
+        height: 5rem;
+    }
+
+    .project-hero-strip {
+        height: 180px;
+    }
+
+    .project-main-title {
+        font-size: 1.2rem;
+    }
+
+    .hero-quote-container {
+        padding: var(--space-2) var(--space-2);
+    }
+
+    .hero-quote-text {
+        font-size: 1rem;
+    }
+
+    /* Las filas editoriales pasan a columna */
+    .story-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+
+    /* En mobile, el orden texto-imagen siempre queda: texto arriba, imagen abajo */
+    .row-text-right .story-media {
+        order: 2;
+    }
+
+    .row-text-right .story-text {
+        order: 1;
+    }
+
+    .museum-editorial-story {
+        gap: var(--space-4);
+        margin: var(--space-3) auto var(--space-4) auto;
+        padding: 0;
+    }
+
+    .frame-horizontal,
+    .frame-portrait {
+        max-width: 100%;
+        aspect-ratio: 4 / 3;
+    }
+
+    .main-video-showcase {
+        padding: 0;
+    }
+
+    .masonry-grid {
+        columns: 2;
+        column-gap: 6px;
+    }
+
+    .masonry-item {
+        margin-bottom: 6px;
+    }
+
+    .project-specs-section {
+        grid-template-columns: 1fr;
+        gap: var(--space-2);
+        margin: 0 0 var(--space-3) 0;
+    }
+
+    .specs-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-2) var(--space-1);
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 2rem;
+        padding: 0 0.5rem;
+    }
+}

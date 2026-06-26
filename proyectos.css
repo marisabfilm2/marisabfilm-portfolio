@@ -215,3 +215,49 @@ footer {
     text-transform: uppercase;
     font-weight: var(--fw-light);
 }
+
+/* ==========================================================================
+   RESPONSIVE — proyectos.css
+   ========================================================================== */
+
+/* ---- Tablet (≤ 1024px) ---- */
+@media (max-width: 1024px) {
+    .projects-page {
+        padding-top: 6rem;
+    }
+
+    .editorial-item {
+        flex: 0 0 240px;
+    }
+}
+
+/* ---- Mobile (≤ 640px) ---- */
+@media (max-width: 640px) {
+    .projects-page {
+        padding-top: 5.5rem;
+    }
+
+    /* El grid pasa de scroll horizontal a columna vertical */
+    .editorial-grid {
+        flex-direction: column;
+        overflow-x: visible;
+        overflow-y: visible;
+        gap: var(--space-3);
+        padding-bottom: 0;
+        scroll-snap-type: none;
+    }
+
+    .editorial-item {
+        flex: none;
+        width: 100%;
+    }
+
+    .item-image {
+        aspect-ratio: 4 / 3;
+    }
+
+    .projects-filter {
+        gap: var(--space-2);
+        margin-bottom: var(--space-3);
+    }
+}
